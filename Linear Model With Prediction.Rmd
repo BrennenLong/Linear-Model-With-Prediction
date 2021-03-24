@@ -46,3 +46,16 @@ plot(SIMS~ARM,data=data)
 ```{r}
 basicNN + geom_point() + geom_smooth(method=lm)
 ``` 
+
+# Numerical results
+
+```{r}
+cor(SIMS~ARM,data=data)
+```
+
+# Inferential  (Build linear model)
+  
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
