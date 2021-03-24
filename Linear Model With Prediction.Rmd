@@ -41,12 +41,6 @@ data <- read.csv(file="https://onlinestatbook.com/case_studies_rvls/physical_str
 plot(SIMS~ARM,data=data)
 ```
 
-## Now with ggplot
-
-```{r}
-basicNN + geom_point() + geom_smooth(method=lm)
-``` 
-
 # Numerical results
 
 ```{r}
@@ -59,3 +53,11 @@ cor(SIMS~ARM,data=data)
 model.1 <- lm(SIMS~ARM,data=data)
 summary.lm(model.1)
 ```
+
+The equation of the blue line is SIMS = -4.10 + ARM * 0.055
+
+```{r}
+newdata <- data.frame(ARM = 88, GRIP = 94)
+predict(model.1, newdata = newdata, interval = "prediction")
+```
+
